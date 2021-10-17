@@ -18,6 +18,7 @@ import com.awesome.photo.remote.api.providers.JSONPlaceholderRepository
 import com.awesome.photo.remote.api.providers.JSONPlaceHolderServiceBuilder
 import androidx.databinding.DataBindingUtil
 import com.awesome.photo.photoviewer.R
+import com.awesome.photo.photoviewer.composables.GreetingComposable
 import com.awesome.photo.photoviewer.databinding.ActivityMainBinding
 import com.google.accompanist.appcompattheme.AppCompatTheme
 
@@ -37,21 +38,10 @@ class MainActivity : AppCompatActivity() {
         this
             )
         )
-        val greeting = viewBinding.mainGreeting.setContent {
+        viewBinding.mainGreeting.setContent {
             AppCompatTheme {
-                Greeting()
+                GreetingComposable().Greeting()
             }
         }
     }
-}
-
-@Composable
-private fun Greeting() {
-    Text(text = "Hello Ross!",
-    style = MaterialTheme.typography.h2,
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = dimensionResource(R.dimen.margin_small))
-            .wrapContentWidth(Alignment.CenterHorizontally)
-    )
 }
