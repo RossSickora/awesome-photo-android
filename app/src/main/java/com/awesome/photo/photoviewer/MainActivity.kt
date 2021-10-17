@@ -3,6 +3,15 @@ package com.awesome.photo.photoviewer
 import androidx.appcompat.app.AppCompatActivity
 import com.awesome.photo.photoviewer.viewmodels.MainActivityViewModel
 import android.os.Bundle
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentWidth
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.lifecycle.ViewModelProviders
 import com.awesome.photo.photoviewer.viewmodels.factories.MainActivityViewModelFactory
 import com.awesome.photo.remote.api.providers.JSONPlaceholderRepository
@@ -10,9 +19,10 @@ import com.awesome.photo.remote.api.providers.JSONPlaceHolderServiceBuilder
 import androidx.databinding.DataBindingUtil
 import com.awesome.photo.photoviewer.R
 import com.awesome.photo.photoviewer.databinding.ActivityMainBinding
+import com.google.accompanist.appcompattheme.AppCompatTheme
 
 class MainActivity : AppCompatActivity() {
-    var mainActivityViewModel: MainActivityViewModel? = null
+    private var mainActivityViewModel: MainActivityViewModel? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mainActivityViewModel = ViewModelProviders.of(
@@ -21,12 +31,27 @@ class MainActivity : AppCompatActivity() {
         ).get(
             MainActivityViewModel::class.java
         )
-        val viewBinding: ActivityMainBinding =
-            DataBindingUtil.setContentView(this, R.layout.activity_main)
+        val viewBinding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         viewBinding.albumsCta.setOnClickListener(
             mainActivityViewModel!!.viewAlbumsClickListener(
-                this
+        this
             )
         )
+        val greeting = viewBinding.mainGreeting.setContent {
+            AppCompatTheme {
+                Greeting()
+            }
+        }
     }
+}
+
+@Composable
+private fun Greeting() {
+    Text(text = "Hello Ross!",
+    style = MaterialTheme.typography.h2,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = dimensionResource(R.dimen.margin_small))
+            .wrapContentWidth(Alignment.CenterHorizontally)
+    )
 }
