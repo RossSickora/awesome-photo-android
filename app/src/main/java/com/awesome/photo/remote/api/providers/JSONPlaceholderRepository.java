@@ -1,6 +1,6 @@
 package com.awesome.photo.remote.api.providers;
 
-import android.arch.lifecycle.MutableLiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import com.awesome.photo.remote.api.models.AlbumsModel;
 

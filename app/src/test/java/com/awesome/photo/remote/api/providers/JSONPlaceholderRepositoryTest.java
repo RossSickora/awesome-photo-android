@@ -1,8 +1,5 @@
 package com.awesome.photo.remote.api.providers;
 
-import android.arch.core.executor.testing.InstantTaskExecutorRule;
-import android.arch.lifecycle.MutableLiveData;
-
 import com.awesome.photo.remote.api.models.AlbumsModel;
 import org.junit.Before;
 import org.junit.Rule;
@@ -13,11 +10,13 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import retrofit2.Call;
 import retrofit2.Callback;
-import retrofit2.Response;
 
 import java.io.IOException;
 
 import static org.junit.Assert.*;
+
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule;
+import androidx.lifecycle.MutableLiveData;
 
 public class JSONPlaceholderRepositoryTest {
 

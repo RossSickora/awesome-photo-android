@@ -1,11 +1,13 @@
 package com.awesome.photo.photoviewer.viewmodels;
 
-import android.arch.lifecycle.ViewModel;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModel;
+
 import com.awesome.photo.photoviewer.AlbumsListActivity;
+import com.awesome.photo.photoviewer.PhotoListViewerActivity;
 import com.awesome.photo.remote.api.providers.JSONPlaceholderRepository;
 
 
@@ -22,7 +24,7 @@ public class MainActivityViewModel extends ViewModel {
     }
     //TODO need to update destination to PhotosViewerActivity when created
     public View.OnClickListener viewPhotosClickListener(AppCompatActivity activity){
-        return view -> activity.startActivity(new Intent(activity.getApplicationContext(), AlbumsListActivity.class));
+        return view -> activity.startActivity(new Intent(activity.getApplicationContext(), PhotoListViewerActivity.class));
     }
 
 }

@@ -14,12 +14,13 @@ import static org.junit.Assert.*;
 
 public class AlbumTest {
     Album classUnderTest;
-    @Mock
+
     List<AlbumsModel> albumsList;
     int baseId = 1;
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
+        albumsList = new ArrayList<>();
         classUnderTest = new Album(baseId, albumsList);
     }
 

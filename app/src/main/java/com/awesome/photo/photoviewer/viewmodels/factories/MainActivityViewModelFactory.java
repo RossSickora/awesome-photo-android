@@ -1,8 +1,8 @@
 package com.awesome.photo.photoviewer.viewmodels.factories;
 
-import android.arch.lifecycle.ViewModel;
-import android.arch.lifecycle.ViewModelProvider;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.awesome.photo.photoviewer.viewmodels.MainActivityViewModel;
 import com.awesome.photo.remote.api.providers.JSONPlaceholderRepository;
