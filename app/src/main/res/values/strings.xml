@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PhotoViewer</string>
+    <string name="title_activity_preview_albums">PreviewAlbumsActivity</string>
 </resources>

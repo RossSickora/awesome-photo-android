@@ -1,13 +1,11 @@
 package com.awesome.photo.photoviewer
 
 import androidx.appcompat.app.AppCompatActivity
-import com.awesome.photo.photoviewer.viewmodels.AlbumsViewerViewModel
 import androidx.lifecycle.MutableLiveData
 import com.awesome.photo.remote.api.models.AlbumsModel
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
-import com.awesome.photo.photoviewer.R
 import androidx.lifecycle.ViewModelProviders
 import com.awesome.photo.photoviewer.viewmodels.factories.AlbumsViewerViewModelFactory
 import com.awesome.photo.remote.api.providers.JSONPlaceholderRepository
@@ -15,8 +13,9 @@ import com.awesome.photo.remote.api.providers.JSONPlaceHolderServiceBuilder
 import com.awesome.photo.remote.api.providers.JSONPlaceholderServiceCallback
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.awesome.photo.photoviewer.databinding.ActivityAlbumsListBinding
-import com.awesome.photo.photoviewer.presenters.adapters.AlbumViewerRecyclerViewAdapter
 import com.awesome.photo.photoviewer.presenters.adapters.AlbumModelToAlbumAdapter
+import com.awesome.photo.photoviewer.presenters.adapters.AlbumViewerRecyclerViewAdapter
+import com.awesome.photo.photoviewer.viewmodels.AlbumsViewerViewModel
 
 class AlbumsListActivity : AppCompatActivity() {
     private var albumsViewerViewModel: AlbumsViewerViewModel? = null

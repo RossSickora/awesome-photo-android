@@ -12,9 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name="com.awesome.photo.PreviewAlbumsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_preview_albums"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".AlbumPreviewGrid"
             android:exported="false" />
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
